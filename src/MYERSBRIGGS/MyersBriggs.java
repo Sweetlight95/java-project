@@ -173,5 +173,8 @@ public class MyersBriggs {
             }
         }
     }
-
+//@Override
+//public String toString() {
+//
+//}
 
