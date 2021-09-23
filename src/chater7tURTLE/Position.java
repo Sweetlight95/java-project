@@ -16,7 +16,7 @@ public class Position {
         sb.append('}');
         return sb.toString();
     }
-    @Override
-    public boolean equals
-            if(this.columnPosition)
+//    @Override
+//    public boolean equals
+//            if(this.columnPosition)
 }
