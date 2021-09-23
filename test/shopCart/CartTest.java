@@ -10,7 +10,7 @@ class CartTest {
         Cart cart = new Cart("Adesuwa");
         assertEquals(1, cart.items.size());
         Item item = new Item("Fish", 800, 2);
-        cart.item;
+        //cart;
 
     }
 
