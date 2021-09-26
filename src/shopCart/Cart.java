@@ -1,32 +1,46 @@
 package shopCart;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Cart {
     private String ownerName;
     public ArrayList<Item> items = new ArrayList<>();
+
     public Cart(String ownerName) {
+
         this.ownerName = ownerName;
     }
 
-    public void addItems(Item item){
+    public void addItems(Item item) {
         items.add(item);
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         String stringToReturn = "";
-        for (Item item: items){
-            stringToReturn+=item.toString()+"\n";
-        } return stringToReturn;
-}
+        for (Item item : items) {
+            stringToReturn += item.toString() + "\n";
+        }
+        return stringToReturn;
+    }
+
     public double calculateTotalPrice() {
+//        BigDecimal total = BigDecimal.ZERO;
         double total = 0;
-        for (Item item: items) {
+        for (Item item : items) {
             total = item.calculateTotal();
         }
         return total;
     }
+
     public double calculateVatOff(double percentage) {
+
         return calculateTotalPrice() * (percentage / 100.0);
     }
+
+//    public BigDecimal calculateDiscount() {
+//
+//    }
+
 }
