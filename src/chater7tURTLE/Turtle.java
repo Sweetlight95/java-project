@@ -58,7 +58,7 @@ public class Turtle {
             currentPosition.setRowPosition(currentPosition.getRowPosition() + numberOfSteps - 1);
         }
         if (currentDirection == WEST) {
-            currentPosition.setColumnPosition(currentPosition.getColumnPosition() + numberOfSteps);
+            currentPosition.setColumnPosition(currentPosition.getColumnPosition() + numberOfSteps-1);
         }
         if (currentDirection == NORTH) {
             currentPosition.setRowPosition(currentPosition.getRowPosition() + numberOfSteps);

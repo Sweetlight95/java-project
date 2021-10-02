@@ -181,31 +181,32 @@ class TurtleTest {
         SketchPad sketchPad = new SketchPad(5, 5);
         ijapa.writeOn(sketchPad, 3);
         ijapa.turnRight();
+        ijapa.writeOn(sketchPad, 3);
         ijapa.turnRight();
         assertSame(WEST, ijapa.getCurrentDirection());
-        assertEquals(new Position(0, 2), ijapa.getCurrentPosition());
+        assertEquals(new Position(2, 2), ijapa.getCurrentPosition());
         ijapa.writeOn(sketchPad, 3);
         int[][] floor = sketchPad.getFloor();
         assertEquals(1, floor[2][2]);
         assertEquals(1, floor[2][1]);
         assertEquals(1, floor[2][0]);
-        assertEquals(new Position(2, 0), ijapa.getCurrentPosition());
+        assertEquals(new Position(2, 4), ijapa.getCurrentPosition());
         sketchPad.displayFloor();
  }
-//    @Test
-//    void testTurtleCanWriteOnSketchpadWhileFacingNorth() {
-//        ijapa.penDown();
-//        SketchPad sketchPad = new SketchPad(5, 5);
-//        ijapa.writeOn(sketchPad, 3);
-//        ijapa.turnRight();
-//        assertSame(NORTH, ijapa.getCurrentDirection());
-//        assertEquals(new Position(0, 2), ijapa.getCurrentPosition());
-//        ijapa.writeOn(sketchPad, 3);
-//        int[][] floor = sketchPad.getFloor();
-//        assertEquals(1, floor[2][0]);
-//        assertEquals(1, floor[1][0]);
-//        assertEquals(1, floor[0][0]);
-//        assertEquals(new Position(0, 0), ijapa.getCurrentPosition());
-//        sketchPad.displayFloor();
-//    }
+    @Test
+    void testTurtleCanWriteOnSketchpadWhileFacingNorth() {
+        ijapa.penDown();
+        SketchPad sketchPad = new SketchPad(5, 5);
+        ijapa.writeOn(sketchPad, 3);
+        ijapa.turnRight();
+        assertSame(NORTH, ijapa.getCurrentDirection());
+        assertEquals(new Position(0, 2), ijapa.getCurrentPosition());
+        ijapa.writeOn(sketchPad, 3);
+        int[][] floor = sketchPad.getFloor();
+        assertEquals(1, floor[2][0]);
+        assertEquals(1, floor[1][0]);
+        assertEquals(1, floor[0][0]);
+        assertEquals(new Position(0, 0), ijapa.getCurrentPosition());
+        sketchPad.displayFloor();
+    }
 }
