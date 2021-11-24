@@ -20,6 +20,10 @@ public class IntStreamOperations {
         System.out.printf("%nSum via reduce method: %d%n", IntStream.of(values).reduce(0, (x, y) ->  x + y));
         System.out.printf("Product via reduce method: %d%n", IntStream.of(values).reduce((x, y) ->  x * y).getAsInt());
         System.out.printf("Sum of squares via map and sum: %d%n%n", IntStream.of(values).map(x -> x * x).sum());
+        System.out.printf("Values displayed in soorted order: %s%n", IntStream.of(values)
+                .sorted()
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining(" ")));
 
     }
 }
